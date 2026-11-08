@@ -1,0 +1,109 @@
+:root {
+  --background-page: #f3ece4;
+  --background-card: #f2e9e2;
+  --accent-color: #b76d52;
+  --text-color: #54514a;
+}
+body {
+  color: var(--text-color);
+  background-color: var(--background-page);
+  font-family: Montserrat, sans-serif;
+}
+.card {
+  background-color: var(--background-card);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/*Calendar*/
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+}
+.calendar-header button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: var(--accent-color);
+  font-size: 24px;
+}
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.5;
+}
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+.days span {
+  text-align: center;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.days .today {
+  background-color: var(--accent-color);
+  color: var(--background-card);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/*Timer*/
+.timer-ring {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  --progress: 40%;
+  position: relative;
+  background: conic-gradient(
+    from 0deg,
+    var(--accent-color) var(--progress, 0%),
+    #e9d4c5 var(--progress, 0%)
+  );
+}
+
+.timer-ring::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border-radius: 50%;
+  background-color: var(--background-card);
+}
+
+.time {
+  font-size: 48px;
+  position: relative;
+}
+.time-label {
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.6;
+  position: relative;
+}
+.start-btn {
+  border-radius: 999px;
+  border: none;
+  background-color: var(--accent-color);
+  color: var(--background-card);
+  cursor: pointer;
+  padding: 14px 40px;
+  display: block;
+  margin: 20px auto;
+}
